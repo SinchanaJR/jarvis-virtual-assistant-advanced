@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>JARVIS | Virtual Assistant</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+  <main class="app-shell">
+    <header class="topbar">
+      <div class="brand-mark">J</div>
+      <div><p class="eyebrow">PERSONAL AI INTERFACE</p><h1>JARVIS <span>ASSISTANT</span></h1></div>
+      <div class="status"><span class="status-dot"></span><span id="statusText">SYSTEM ONLINE</span></div>
+    </header>
+
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">YOUR DESKTOP COMPANION</p>
+        <h2>How can I help<br><span>you today?</span></h2>
+        <p class="subtext">Type a message or use your microphone to interact with Jarvis.</p>
+        <div class="quick-actions">
+          <button class="quick" data-prompt="What time is it?">◷ <span>Time</span></button>
+          <button class="quick" data-prompt="What is today's date?">▦ <span>Date</span></button>
+          <button class="quick" data-prompt="What can you do?">✦ <span>Help</span></button>
+          <button class="quick" data-prompt="Tell me a joke">⌁ <span>Joke</span></button>
+        </div>
+      </div>
+      <div class="orb-wrap" aria-label="Jarvis animated assistant">
+        <div class="orb-ring ring-outer"></div><div class="orb-ring ring-inner"></div>
+        <div class="orb"><div class="orb-core"></div></div>
+        <div class="orb-caption"><span class="pulse"></span> JARVIS IS LISTENING</div>
+      </div>
+    </section>
+
+    <section class="workspace">
+      <div class="chat-panel">
+        <div class="panel-heading"><div><p class="eyebrow">CONVERSATION</p><h3>Assistant chat</h3></div><button id="clearBtn" class="text-button">Clear chat ↗</button></div>
+        <div id="chatLog" class="chat-log" aria-live="polite">
+          <div class="message assistant"><div class="avatar">J</div><div class="bubble"><span class="speaker">JARVIS</span><p>Hello! I'm Jarvis. Ask me for the time, date, a calculation, or type <b>help</b> to see what I can do.</p></div></div>
+        </div>
+        <form id="chatForm" class="composer">
+          <input id="messageInput" type="text" maxlength="500" placeholder="Message Jarvis..." autocomplete="off" aria-label="Message Jarvis">
+          <button type="button" id="micBtn" class="icon-button" title="Use voice input" aria-label="Use voice input">🎙</button>
+          <button type="submit" class="send-button">Send <span>➤</span></button>
+        </form>
+        <p id="voiceNote" class="voice-note">Voice input depends on browser support and microphone permission.</p>
+      </div>
+      <aside class="side-panel">
+        <div class="panel-heading"><div><p class="eyebrow">CAPABILITIES</p><h3>Quick commands</h3></div></div>
+        <button class="command" data-prompt="What is your name?"><span class="command-icon">✧</span><span><b>About Jarvis</b><small>Meet your assistant</small></span><span class="arrow">↗</span></button>
+        <button class="command" data-prompt="12 * 8"><span class="command-icon">＋</span><span><b>Calculator</b><small>Try 12 * 8 or 45 / 5</small></span><span class="arrow">↗</span></button>
+        <button class="command" data-prompt="Open GitHub"><span class="command-icon">⌘</span><span><b>Open a website</b><small>Google, YouTube, GitHub...</small></span><span class="arrow">↗</span></button>
+        <div class="privacy-card"><div class="privacy-icon">◈</div><b>Local demo</b><p>This project runs locally. It does not connect to private accounts or control your computer beyond opening supported websites after a command.</p></div>
+      </aside>
+    </section>
+    <footer><span>JARVIS VIRTUAL ASSISTANT</span><span>FLASK · JAVASCRIPT · WEB SPEECH API</span></footer>
+  </main>
+  <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>
